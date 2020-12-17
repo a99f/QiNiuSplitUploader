@@ -9,8 +9,6 @@ In the process of developing Flutter short video recording module, our team foun
 
 Based on the object storage block documentation of the seven cows cloud, we can cut and upload the binary files on the flutter or dart server and just call the command integration in the cloud.
 
-Translated with www.DeepL.com/Translator (free version)
-
 七牛云文档： https://developer.qiniu.com/kodo/api/1286/mkblk
 
 上传时需要调用自身的服务器获取七牛云的授权Token链接，安全交互算法可以自行编写。
