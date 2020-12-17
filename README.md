@@ -17,7 +17,7 @@ Based on the object storage block documentation of the seven cows cloud, we can 
 
 QiNiu cloud documentation: https://developer.qiniu.com/kodo/api/1286/mkblk
 
-When uploading, you need to call your own server to get the authorization Token link from SevenNiuCloud, and the security interaction algorithm can be written by yourself.
+When uploading, you need to call your own server to get the authorization Token link from QiNiuCloud, and the security interaction algorithm can be written by yourself.
 
 After testing, the media files can be played normally after uploading.
 
