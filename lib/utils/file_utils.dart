@@ -593,7 +593,7 @@ class FileUtils {
       throw RangeError.range(end, 0, file.lengthSync());
     }
 
-    final c = QWRComputer<List<int>>();
+    final c = Computer<List<int>>();
 
     List<int> result = [];
     file.openRead(start, end).listen((data) {
@@ -606,10 +606,10 @@ class FileUtils {
   }
 }
 
-class QWRComputer<T> {
+class Computer<T> {
   Completer<T> completer = Completer();
 
-  QWRComputer();
+  Computer();
 
   Future<T> get future => completer.future;
 
