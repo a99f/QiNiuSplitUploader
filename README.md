@@ -5,14 +5,29 @@
 
 基于七牛云的对象存储块文档，我们可以将flutter或dart服务器上的二进制文件进行切割上传，并在云端调用命令整合即可。
 
+In the process of developing Flutter short video recording module, our team found that SevenNiu Cloud has no flutter compatible upload module, and the native Java/OC module still has the problem of oversized after rewriting, so we generated this project to achieve lightweight upload without native library support and complete media development at Flutter level.
+
+Based on the object storage block documentation of the seven cows cloud, we can cut and upload the binary files on the flutter or dart server and just call the command integration in the cloud.
+
+Translated with www.DeepL.com/Translator (free version)
+
 七牛云文档： https://developer.qiniu.com/kodo/api/1286/mkblk
 
 上传时需要调用自身的服务器获取七牛云的授权Token链接，安全交互算法可以自行编写。
 
 经过测试，媒体文件上传后可正常播放。
 
+QiNiu cloud documentation: https://developer.qiniu.com/kodo/api/1286/mkblk
+
+When uploading, you need to call your own server to get the authorization Token link from SevenNiuCloud, and the security interaction algorithm can be written by yourself.
+
+After testing, the media files can be played normally after uploading.
+
 ### 分割原理
 对一个二进制文件进行分割，按1MB进行计算进行分割，可以分成若干份。通过文件流操作，可以实现文件游标任意位置上的切割和整合。JAVA代码实现如下：
+
+Splitting a binary file is calculated by 1MB for splitting, which can be divided into several parts. The file stream operation allows cutting and integration on any position of the file cursor. java code is implemented as follows.
+
 ```java
  import java.io.*;
  
@@ -118,6 +133,9 @@
 ```
 
 dart实现的基本原理与之相似，具体实现时文件的范围，特别是大文件的范围查找，需要使用dart的异步编程Futuer特性，性能比较优异。
+
+The basic principle of dart implementation is similar, the specific implementation of the range of files, especially the range of large files to find, need to use dart's asynchronous programming Futuer feature, the performance is superior.
+
 ```dart
  Future<List<int>> getRange(File file, int start, int end) async {
     if (file == null || !file.existsSync()) {
