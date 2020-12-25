@@ -21,6 +21,8 @@ When uploading, you need to call your own server to get the authorization Token 
 
 After testing, the media files can be played normally after uploading.
 
+![avatar](./assets/flow-chart/分拆原理.jpg)
+
 ### 分割原理
 对一个二进制文件进行分割，按1MB进行计算进行分割，可以分成若干份。通过文件流操作，可以实现文件游标任意位置上的切割和整合。JAVA代码实现如下：
 
